@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  line-height: 1.5;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-size: 12px;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 12px;
+}
+
+.container {
+  width: 900px;
+  height: 480px;
+  background: #ffff;
+  border-radius: 15px;
+  display: flex;
+}
+.image-container {
+  flex: 1;
+  /* background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 103% 60%; */
+  position: relative;
+}
+.container .image-container .woman-image {
+  width: 100%;
+  height: 100%;
+  background: url(../images/illustration-woman-online-desktop.svg) no-repeat -70px
+      center,
+    url(../images/bg-pattern-desktop.svg) no-repeat -570px -300px;
+}
+.container .image-container img {
+  position: absolute;
+  top: 40%;
+  left: -94px;
+}
+
+.container .content-container {
+  flex: 1;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  padding: 40px;
+}
+.container .content-container h1 {
+  margin-bottom: 40px;
+}
+.container .content-container .content-box {
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding: 10px 0;
+}
+.container .content-container .content-box .label {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+  color: hsl(237, 12%, 33%);
+  font-size: 0.9rem;
+}
+.container .content-container .content-box .label:hover {
+  color: hsl(14, 88%, 65%);
+}
+.container .content-container .content-box.active .label {
+  color: hsl(238, 29%, 16%);
+  font-weight: bold;
+}
+.container .content-container .content-box .label img {
+  position: absolute;
+  right: 0;
+}
+.container .content-container .content-box.active .label img {
+  transform: rotate(180deg);
+}
+
+.container .content-container .content-box .content {
+  height: 0;
+  overflow: Auto;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  color: hsl(240, 6%, 50%);
+}
+/* Active Content */
+.container .content-container .content-box.active .content {
+  height: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 350px;
+    position: relative;
+  }
+  .container .image-container img {
+    display: none;
+  }
+  .image-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -110px;
+    left: 0px;
+    text-align: center;
+  }
+  .container .image-container .woman-image {
+    background: url(../images/illustration-woman-online-mobile.svg) no-repeat
+        28px 2px,
+      url(../images/bg-pattern-mobile.svg) no-repeat center 110px;
+  }
+  .container .content-container {
+    padding: 0 20px;
+  }
+  .container .content-container .content-box {
+    padding: 5px 0;
+  }
+  .container .content-container h1 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
